@@ -3,8 +3,7 @@
 ## Metamodel
 
 Usually, the abstract syntax is represented by the metamodels, which are normally based on object-oriented models, such as classes, attributes and associations. Figure below provides a visualization of the high-level specification of the elements of the DRESS-ML syntax using UML class diagrams. These elements are based on the resources listed in the domain analysis presented in last section and represent a set of abstractions to express a model for drone exceptional scenarios.
-
-![https://i.imgur.com/HFkDMEy.png](https://i.imgur.com/HFkDMEy.png)
+![image](https://user-images.githubusercontent.com/84074511/139722276-bb1ad365-9f78-42f8-9b25-f3e20a87b5f6.png)
 
 ## Expressions DRESS-ML concepts
 https://docs.google.com/spreadsheets/d/1IDKiJGo5HrBHL_zPTLNSmZfeido1U39s/edit?usp=sharing&ouid=118203841753970495970&rtpof=true&sd=true
