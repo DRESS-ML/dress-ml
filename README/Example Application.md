@@ -13,6 +13,20 @@ Given that, the objectives of the application are (i) to monitor fire outbreak a
 
 ![image](https://user-images.githubusercontent.com/84074511/139732119-aa0a192f-6c35-4025-bf48-232d83da0fb8.png)
 
+**For ease of understanding, the execution of exceptional scenarios were exercised in the Dragonfly Simulator:** 
+
+https://drive.google.com/drive/folders/1HPAnVDhr5XRj4YnXWf_rF-ujZYaDbCRk?usp=sharing
+
+
+## MoveAside
+
+Figure below depicts the exceptional scenario _MoveAside_ modelled using DRESS-ML. The exceptional scenario happens when the drone: (i) is flying over either a water region or region with fire; (ii) the wind is not strong; (iii) and the drone is at least 2000 m away from the target. This is represented by the join point 1 in the Figure General Scenarios. Note that, at this moment, the domain expert is interested in specifying the conditions that apply for the exceptional scenario regardless how the information will be acquired (e.g, how to know that the drone is above water). This will be translated to a drone platform or simulator by a technology expert in the code generation process.
+
+![image](https://user-images.githubusercontent.com/84074511/139736790-5af0b6e8-f952-4d86-af9a-b34b0e07899f.png)
+
+
+The _When_ clause indicates that a safe landing would be executed, but by following the specification of the _Then_ clause, the self-adaptive behaviour must occur before the execution of the safe landing command, since the advice \textit{Before} has been used. In this case, the drone verifies whether it is still over either water region or region with fire and, if so, it moves aside. This is performed  until it reaches a no-fire land. After the adaptive behaviour has been finished, then the safe landing command is executed.   
+
 ## KeepFlying
 The purpose of the _KeepFlying_ exceptional scenario is to enable the drone to continue flying towards the destination when there are favorable conditions instead of a safe landing operation. This situation, it is understood as favorable conditions when the strong wind moves towards the destination location (east), and the distance to the destination location is less than 2000 meters, enabling the drone to reach its destination. And after this new behavior is realized, the drone can perform its predefined behavior flow.
 
@@ -88,5 +102,3 @@ Figure above shows the implementation of this scenario using the DRES-ML. The _W
 As can be seen in Figure General Scenarios, that the join point 2 intercepts after the execution of the SafeLanding exceptional scenario. Therefore, it is modeled using the _safe landing event starts_ inside the When clause, and "After" is specified in the Then clause, representing the type of adaptation. Besides, in the last clause, it is indicated which script represents the adaptive behavior by name, in that situation, called "helperCamera".
 
 Finally, it was modelled the script in terms of command and flow statements. Thus, they are executed to start the camera, start the manual gimbal and start the energy saving mode. To allow the camera to point to the nearest region between origin and destination, it is used the _if-else _ statement with the condition being modeled using the _comparative relative distance_ expression. It checks if the drone's distance from the origin is less than the destination's distance. If the drone distance to the origin is smaller, the drone should point the camera to the west using gimbal rotation event. In this case, the drone rotates the camera to 180 degrees on the yam axis. Otherwise, the drone rotates to 0 degrees also on the yam axis. It is worth mentioning that it was assumed that the drone always initiates it mission in the west and has the destination in the east, as stated in the problem description. This adaptation tries to maximize the change of the drone to be tracked in a situation where the drone is lost, therefore it assists in the objective (ii) of the system.
-
-https://drive.google.com/drive/folders/1HPAnVDhr5XRj4YnXWf_rF-ujZYaDbCRk?usp=sharing
