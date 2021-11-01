@@ -10,7 +10,7 @@ The _Drone_ category contemplates the _MotionState_ and _Battery_ elements.
 
 - The _MotionState_ element encloses attributes associated with the drone movement, which may be in terms of direction maneuver, current position, distance from a position, rotation, speed, acceleration and altitude.
 
--     Maneuver is specified by cardinal directions (such as, north, east, south and west) or direction to a specific region (for example, origin and destination);
+* Maneuver is specified by cardinal directions (such as, north, east, south and west) or direction to a specific region (for example, origin and destination);
 -  Current position indicates the current geographical position of the drone collected by the GPS (latitude and longitude);
 -  Distance between the current position of the drone and a given position (drone to regions, obstacles, pre-established points or GPS coordinates);
 -  Rotation is represented in degrees in principal axes (vertical axis (yaw), transverse axis (pitch) and longitudinal axis (roll));
